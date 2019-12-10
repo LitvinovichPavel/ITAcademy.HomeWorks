@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "hw_01_assets", "hw_01_assets", "{96AC5E99-261F-4020-9A4C-F5923AE445C6}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Users\ПК\Desktop\Screenshot_11.png = ..\..\..\..\Users\ПК\Desktop\Screenshot_11.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
