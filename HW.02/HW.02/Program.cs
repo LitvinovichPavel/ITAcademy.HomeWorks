@@ -17,7 +17,7 @@ namespace HW._02
               8.пойду попантуюсь перед женой, что я крутой программист
             */
             
-           StreamReader textReader = new StreamReader(@"C:\D\it\image.txt", true);
+            StreamReader textReader = new StreamReader(@"C:\D\it\image.txt", true);
             string textReaderResult = textReader.ReadToEnd();
             string[] arrayOfTextResult = textReaderResult.Split(' ');
             byte[] imageBytes = new byte[arrayOfTextResult.Length - 1];
