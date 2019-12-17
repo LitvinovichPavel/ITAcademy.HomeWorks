@@ -8,9 +8,9 @@ namespace HW03.Task1
         {
             // явное преобразование
             // 1 пример
-            int PeopleCity = 2_000_000;
-            byte PeopleVillage = (byte)PeopleCity;
-            Console.WriteLine($"явное преобразование. до преобразования значение = {PeopleCity},\n после преобразования значение = {PeopleVillage}\n");
+            int peopleCity = 2_000_000;
+            byte peopleVillage = (byte)peopleCity;
+            Console.WriteLine($"явное преобразование. до преобразования значение = {peopleCity},\n после преобразования значение = {peopleVillage}\n");
 
             // 2 пример
             decimal num111 = 1234567.89M;
@@ -21,8 +21,6 @@ namespace HW03.Task1
             long @long = -9_223_222_222;
             sbyte @sbyte = (sbyte)@long;
             Console.WriteLine($"явное преобразование. до преобразования значение =  {@long},\n после преобразования значение = {@sbyte}\n");
-
-
 
             // неявное преобразование
             // 1 пример
@@ -44,26 +42,23 @@ namespace HW03.Task1
             sum2 = number5 + number6;
             Console.WriteLine($"неявное преобразование sum2 = {sum2}\n");
 
-
-
             // Boxing
-            byte BoxByte = 33;
-            int BoxInt = 44;
-            double BoxDouble = 55;
+            byte boxByte = 33;
+            int boxInt = 44;
+            double boxDouble = 55;
 
-            object obj1 = BoxByte;
-            object obj2 = BoxInt;
-            object obj3 = BoxDouble;
+            object obj1 = boxByte;
+            object obj2 = boxInt;
+            object obj3 = boxDouble;
 
             // Unboxing
-            int UnBox1 = (byte)obj1;
-            int UnBox2 = (int)obj2;
-            double UnBox3 = (double)obj3;
+            int unBox1 = (byte)obj1;
+            int unBox2 = (int)obj2;
+            double unBox3 = (double)obj3;
 
             Console.WriteLine($"obj1 = {obj1}");
             Console.WriteLine($"obj2 = {obj2}");
             Console.WriteLine($"obj3 = {obj3}");
-
         }
     }
 }
