@@ -29,7 +29,7 @@ namespace AssemblyTwo
     }
     class Man
     {
-        protected byte ageMan = 50;
+        protected byte ageMan = 51;
         public void ManMethod()
         {
             Console.WriteLine($"{ageMan} years old man");
