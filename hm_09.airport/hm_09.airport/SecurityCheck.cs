@@ -42,6 +42,7 @@ namespace hm_09.airport
                 {
                     Console.WriteLine(" !!!ОСТАВАТЬСЯ НА МЕСТЕ!!!\n ВЫ ЗАДЕРЖАНЫ ПО ПОДОЗРЕНИЮ " +
                                       "В НЕЗАКОННОМ НОШЕНИИ ОРУЖИЯ!!!");
+                    Console.ReadKey();
                     System.Diagnostics.Process.GetCurrentProcess().Kill(); // т.к. нашего пассажира загребли
                                                                            // копы, программа останавливается :(((
                 }
