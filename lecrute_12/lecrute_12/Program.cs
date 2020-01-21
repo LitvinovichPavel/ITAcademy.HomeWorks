@@ -10,9 +10,9 @@ namespace lecrute_12
             Circle circle = new Circle();
             Square square = new Square();
 
-            Console.WriteLine($"This is triabgle. CLR Type is {}. Square is {triangle.TriangleArea()}");
-            Console.WriteLine($"This is circle. CLR Type is {}. Square is {circle.SircleArea}");
-            Console.WriteLine($"This is {}. CLR Type is {}. Square is {}");
+            Console.WriteLine($"This is triabgle. Square is {triangle.TriangleArea()}");
+            Console.WriteLine($"This is circle. Square is {circle.SircleArea()}");
+            Console.WriteLine($"This is square. Square is {square.AreaSquare()}");
         }
     }
 }
