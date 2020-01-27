@@ -6,10 +6,14 @@ namespace hm_11
 {
     class Circle : BaseClass
     {
-        public void CircleArea(double radius)
+        private double Radius { get; set; }
+        public Circle(string name, double radius) : base(name)
         {
-            area = PI * Math.Pow(radius, 2);
-            Console.WriteLine($"This is circle. CLR type is circle. Square is {area}");
+            Radius = radius;
+        }
+        public override double Area()
+        {
+            return Math.PI * Math.Pow(Radius, 2);
         }
     }
 }

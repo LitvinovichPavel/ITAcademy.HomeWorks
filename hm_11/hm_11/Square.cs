@@ -6,10 +6,14 @@ namespace hm_11
 {
     class Square : BaseClass
     {
-        public void SquareArea(double side)
+        private double Side { get; set; }
+        public Square(string name, double side) : base(name)
         {
-            area = Math.Pow(side, 2);
-            Console.WriteLine($"This is square. CLR type is square. Square is {area}");
+            Side = side;
+        }
+        public override double Area()
+        {
+            return Math.Pow(Side, 2);
         }
     }
 }

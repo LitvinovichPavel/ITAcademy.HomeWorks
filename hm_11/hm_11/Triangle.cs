@@ -6,10 +6,16 @@ namespace hm_11
 {
     class Triangle : BaseClass
     {
-        public void TriangleArea(double bisector, double side)
+        private double Side { get; set; }
+        private double Height { get; set; }
+        public Triangle(string name, double side, double height) : base(name)
         {
-            area = (side * bisector) / 2;
-            Console.WriteLine($"This is triangle. CLR type is triangle. Square is {area}");
+            Side = side;
+            Height = height;
+        }
+        public override double Area()
+        {
+            return (Side * Height) / 2;
         }
     }
 }
