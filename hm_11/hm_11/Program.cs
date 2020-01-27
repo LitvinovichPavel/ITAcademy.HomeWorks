@@ -20,7 +20,8 @@ namespace hm_11
         {
             foreach (var item in arrayBase)
             {
-                Console.WriteLine($"This is {item.Name}. CLR Type is {item.GetType()}. Square is {item.Area()}");
+                Console.WriteLine($"This is {item.Name}. CLR Type is {item.GetType()}. " +
+                                  $"Square is {item.Area()}");
             }
         }
     }
