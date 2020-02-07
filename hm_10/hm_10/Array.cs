@@ -6,5 +6,6 @@ namespace hm_10
 {
     class Array
     {
+
     }
 }
