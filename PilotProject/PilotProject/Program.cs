@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace PilotProject
 {
@@ -6,8 +8,10 @@ namespace PilotProject
     {
         static void Main(string[] args)
         {
-            MakiAll makiAll = new MakiAll();
-            makiAll.Maki();
+            BeveragesAll beveragesAll = new BeveragesAll();
+            beveragesAll.PriceProduct();
+            //double finalPrice = beveragesAll.Beverages();
+            //Console.WriteLine($"FINAL PRICE: {finalPrice} ");
         }
     }
 }

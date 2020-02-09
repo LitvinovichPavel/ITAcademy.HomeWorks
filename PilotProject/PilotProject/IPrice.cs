@@ -6,6 +6,6 @@ namespace PilotProject
 {
     interface IPrice
     {
-        public double PriceProduct();
+        public void PriceProduct();
     }
 }
