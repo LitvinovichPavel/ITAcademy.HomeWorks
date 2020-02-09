@@ -4,11 +4,8 @@ using System.Text;
 
 namespace PilotProject
 {
-    class SetsAll : Menu//, IPrice
+    interface IPrice
     {
-        public void Sets()
-        {
-
-        }
+        public double PriceProduct();
     }
 }

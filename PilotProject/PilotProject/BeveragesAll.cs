@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PilotProject
 {
-    class BeveragesAll : Menu
+    class BeveragesAll : Menu//, IPrice
     {
         public const string fanta = "Fanta";
         public const string cola = "Coca-Cala";
@@ -22,6 +22,13 @@ namespace PilotProject
         {
             Console.Write("Что будете пить?: ");
             Console.Write($"\n1: {BeveragesType.Fanta}\n2: {BeveragesType.CocaCola}\n3: {BeveragesType.Water}");
+            int choiseDrink;
+            choiseDrink = Convert.ToInt32(Console.ReadLine());
+
         }
+        //public double PriceProduct()
+        //{
+        //
+        //}
     }
 }
