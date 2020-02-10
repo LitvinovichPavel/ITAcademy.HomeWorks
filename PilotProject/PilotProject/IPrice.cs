@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PilotProject
 {
-    interface IPrice
+    public interface IPrice
     {
         public void PriceProduct();
     }

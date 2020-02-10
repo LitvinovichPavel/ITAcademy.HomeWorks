@@ -13,41 +13,43 @@ namespace PilotProject
         public const double priceFanta = 2.0;
         public const double priceCola = 2.0;
         public const double priceWater = 0.5;
-        public BeveragesAll()
+        public void Beverages()
         {
-
-        }
-        public BeveragesAll(double choiseFanta, double choiseCola, double choiseWater)
-        {
-            choiseFanta = priceFanta;
-            choiseCola = priceCola;
-            choiseWater = priceWater;
-        }
-        public enum BeveragesType
-        {
-            Fanta = 1,
-            CocaCola = 2,
-            Water = 3
-        }
-        public double Beverages()
-        {
+            Console.WriteLine("***********************************************************");
             Console.WriteLine("Что будете пить?");
-            Console.Write($"Сколько бутылок {fanta} (0,5)?: ");
-            var quantityFanta = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Сколько бутылок {cola} (0,5)?: ");
-            var quantityCocaCola = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Сколько бутылок {water} (0,5)?: ");
-            var quantityWater = Convert.ToInt32(Console.ReadLine());
 
-            var price = (priceFanta * quantityFanta) + (priceCola * quantityCocaCola) + (priceWater * quantityWater);
-            PriceBeverages = price;
-            return PriceBeverages;
+            try
+            {
+                Console.Write($"Сколько бутылок {fanta}?: ");
+                ushort quantityFanta = Convert.ToUInt16(Console.ReadLine());
+                Console.Write($"Сколько бутылок {cola}?: ");
+                ushort quantityCocaCola = Convert.ToUInt16(Console.ReadLine());
+                Console.Write($"Сколько бутылок {water}?: ");
+                ushort quantityWater = Convert.ToUInt16(Console.ReadLine());
+
+                double price = (priceFanta * quantityFanta) + (priceCola * quantityCocaCola) + (priceWater * quantityWater);
+                PriceBeverages = price;
+                Console.WriteLine(PriceBeverages);
+            }
+            catch(FormatException)                  //в случае некорректного ввода срабатывает исключение
+            {
+                Console.WriteLine("\a\n***!!!Введите число!!!***\n");
+                BeveragesAll beveragesAll = new BeveragesAll();
+                beveragesAll.Beverages();
+            }
+            catch(OverflowException)                //срабатывает если введено слишком большое число
+            {
+                Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
+                BeveragesAll beveragesAll = new BeveragesAll();
+                beveragesAll.Beverages();
+            }
         }
         public void PriceProduct()
         {
             BeveragesAll beveragesAll = new BeveragesAll();
-            beveragesAll.Beverages();
-            Console.WriteLine(beveragesAll.PriceBeverages);
+            double preobrazovat = Convert.ToInt64(PriceBeverages);
+            Console.WriteLine($"!!!!!!!!!!!!!!!!!!!! {preobrazovat}");
+
         }
     }
 }

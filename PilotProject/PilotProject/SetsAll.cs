@@ -15,26 +15,44 @@ namespace PilotProject
         public const double priceNum2Set = 35.2;
         public const double priceNum3Set = 37.1;
         public const double priceBigSet = 55.7;
-        public double Sets()
+        public void Sets()
         {
             Console.WriteLine("Какие сеты будете?");
-            Console.Write($"Сколько хотите: {num1Set}?: ");
-            var quantity1Set = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Сколько хотите: {num2Set}?: ");
-            var quantity2Set = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Сколько хотите: {num3Set}?: ");
-            var quantity3Set = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Сколько хотите: {bigSet}?: ");
-            var quantityBigSet = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("***********************************************************");
 
-            var price = (priceNum1Set * quantity1Set) + (priceNum2Set * quantity2Set) +
-                        (priceNum3Set * quantity3Set) + (priceBigSet * quantityBigSet);
-            PriceSets = price;
-            return PriceSets;
+            try
+            {
+                Console.Write($"Сколько хотите: {num1Set}?: ");
+                ushort quantity1Set = Convert.ToUInt16(Console.ReadLine());
+                Console.Write($"Сколько хотите: {num2Set}?: ");
+                ushort quantity2Set = Convert.ToUInt16(Console.ReadLine());
+                Console.Write($"Сколько хотите: {num3Set}?: ");
+                ushort quantity3Set = Convert.ToUInt16(Console.ReadLine());
+                Console.Write($"Сколько хотите: {bigSet}?: ");
+                ushort quantityBigSet = Convert.ToUInt16(Console.ReadLine());
+
+                double price = (priceNum1Set * quantity1Set) + (priceNum2Set * quantity2Set) +
+                            (priceNum3Set * quantity3Set) + (priceBigSet * quantityBigSet);
+                PriceSets = price;
+                Console.WriteLine($"Стоимость сета: {PriceSets:#.##} рублей");
+            }
+            catch (FormatException)                  //в случае некорректного ввода срабатывает исключение
+            {
+                Console.WriteLine("\a\n***!!!Введите число!!!***\n");
+                SetsAll setsAll = new SetsAll();
+                setsAll.Sets();
+            }
+            catch (OverflowException)                //срабатывает если введено слишком большое число
+            {
+                Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
+                SetsAll setsAll = new SetsAll();
+                setsAll.Sets();
+            }
+
         }
         public void PriceProduct()
         {
-            var setsAll = new SetsAll();
+            var setsAll = new SetsAll();///////////////////////////////not price
             Console.WriteLine(setsAll.PriceSets);
         }
     }

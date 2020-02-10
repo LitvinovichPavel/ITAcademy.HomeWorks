@@ -6,7 +6,7 @@ namespace PilotProject
 {
     class User : Menu, IUser
     {
-        private const string _greeting = "Здравствуйте!";
+        public const string greeting = "Здравствуйте!";
         public User()                                  //конструктор
         {
 
@@ -23,10 +23,6 @@ namespace PilotProject
             enterUserName = Console.ReadLine();
             Console.WriteLine($"Покупатель: {enterUserName}");
         }
-        //public double Price()
-        //{
-            //return;
-        //}
         public void PhoneNumber()                    //ввод номера телефона
         {
             Console.Write("Введите номер Вашего телефона: +375");
@@ -69,10 +65,6 @@ namespace PilotProject
             Console.Write("Введите номер дома: ");
             int userHouseNumber;
             userHouseNumber = Convert.ToInt32(Console.ReadLine());
-        }
-        public void AllOrder()
-        {
-
         }
     }
 }
