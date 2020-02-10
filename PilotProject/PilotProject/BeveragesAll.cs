@@ -47,6 +47,14 @@ namespace PilotProject
         }
         public void PriceProduct()
         {
+            var beveragesAll = new BeveragesAll();
+            beveragesAll.Beverages();
+            object obj;
+            obj = beveragesAll.PriceBeverages;
+            double num = (double)obj;
+
+
+            Console.WriteLine($"PRICE {num}");
         }
     }
 }

@@ -7,9 +7,9 @@ namespace PilotProject
     class User : Menu, IUser
     {
         public const string greeting = "Здравствуйте!";
-        public User()                                  //конструктор
+        public void Hello()
         {
-
+            Console.WriteLine(greeting);
         }
         public int OrderNumber()                       //присваиваем заказу номер
         {
