@@ -31,29 +31,26 @@ namespace PilotProject
                 Console.Write($"Сколько хотите: {bigSet}?: ");
                 ushort quantityBigSet = Convert.ToUInt16(Console.ReadLine());
 
-                double price = (priceNum1Set * quantity1Set) + (priceNum2Set * quantity2Set) +
+                PriceSets = (priceNum1Set * quantity1Set) + (priceNum2Set * quantity2Set) +
                             (priceNum3Set * quantity3Set) + (priceBigSet * quantityBigSet);
-                PriceSets = price;
-                Console.WriteLine($"Стоимость сета: {PriceSets:#.##} рублей");
             }
+
             catch (FormatException)                  //в случае некорректного ввода срабатывает исключение
             {
                 Console.WriteLine("\a\n***!!!Введите число!!!***\n");
-                SetsAll setsAll = new SetsAll();
-                setsAll.Sets();
-            }
-            catch (OverflowException)                //срабатывает если введено слишком большое число
-            {
-                Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
-                SetsAll setsAll = new SetsAll();
+                var setsAll = new SetsAll();
                 setsAll.Sets();
             }
 
+            catch (OverflowException)                //срабатывает если введено слишком большое число
+            {
+                Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
+                var setsAll = new SetsAll();
+                setsAll.Sets();
+            }
         }
         public void PriceProduct()
         {
-            var setsAll = new SetsAll();///////////////////////////////not price
-            Console.WriteLine(setsAll.PriceSets);
         }
     }
 }

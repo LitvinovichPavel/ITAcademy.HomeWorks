@@ -31,28 +31,26 @@ namespace PilotProject
                 Console.Write($"Сколько хотите: {naraMaki}?: ");
                 ushort quantityNaraMaki = Convert.ToUInt16(Console.ReadLine());
 
-                var price = (priceArizonaMaki * quantityArizonaMaki) + (priceAvokadoMaki * quantityAvokadoMaki) +
+                PriceMaki = (priceArizonaMaki * quantityArizonaMaki) + (priceAvokadoMaki * quantityAvokadoMaki) +
                             (priceKaradaMaki * quantityKaradaMaki) + (priceNaraMaki * quantityNaraMaki);
-                PriceMaki = price;
-                Console.WriteLine(PriceMaki);
             }
+
             catch (FormatException)                  //в случае некорректного ввода срабатывает исключение
             {
                 Console.WriteLine("\a\n***!!!Введите число!!!***\n");
-                MakiAll makiAll = new MakiAll();
+                var makiAll = new MakiAll();
                 makiAll.Maki();
             }
+
             catch (OverflowException)                //срабатывает если введено слишком большое число
             {
                 Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
-                MakiAll makiAll = new MakiAll();
+                var makiAll = new MakiAll();
                 makiAll.Maki();
             }
         }
         public void PriceProduct()
         {
-            MakiAll makiAll = new MakiAll();
-            Console.WriteLine($"PRICE {makiAll.PriceMaki:#.##}");///////////////not price
         }
     }
 }

@@ -27,29 +27,26 @@ namespace PilotProject
                 Console.Write($"Сколько бутылок {water}?: ");
                 ushort quantityWater = Convert.ToUInt16(Console.ReadLine());
 
-                double price = (priceFanta * quantityFanta) + (priceCola * quantityCocaCola) + (priceWater * quantityWater);
-                PriceBeverages = price;
-                Console.WriteLine(PriceBeverages);
+                PriceBeverages = (priceFanta * quantityFanta) + (priceCola * quantityCocaCola) +
+                                 (priceWater * quantityWater);
             }
+
             catch(FormatException)                  //в случае некорректного ввода срабатывает исключение
             {
                 Console.WriteLine("\a\n***!!!Введите число!!!***\n");
-                BeveragesAll beveragesAll = new BeveragesAll();
+                var beveragesAll = new BeveragesAll();
                 beveragesAll.Beverages();
             }
+
             catch(OverflowException)                //срабатывает если введено слишком большое число
             {
                 Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
-                BeveragesAll beveragesAll = new BeveragesAll();
+                var beveragesAll = new BeveragesAll();
                 beveragesAll.Beverages();
             }
         }
         public void PriceProduct()
         {
-            BeveragesAll beveragesAll = new BeveragesAll();
-            double preobrazovat = Convert.ToInt64(PriceBeverages);
-            Console.WriteLine($"!!!!!!!!!!!!!!!!!!!! {preobrazovat}");
-
         }
     }
 }
