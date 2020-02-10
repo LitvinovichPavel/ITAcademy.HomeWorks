@@ -32,11 +32,11 @@ namespace PilotProject
         public double Beverages()
         {
             Console.WriteLine("Что будете пить?");
-            Console.Write($"Сколько бутылок {BeveragesType.Fanta} (0,5)?: ");
+            Console.Write($"Сколько бутылок {fanta} (0,5)?: ");
             var quantityFanta = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Сколько бутылок {BeveragesType.CocaCola} (0,5)?: ");
+            Console.Write($"Сколько бутылок {cola} (0,5)?: ");
             var quantityCocaCola = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Сколько бутылок {BeveragesType.Water} (0,5)?: ");
+            Console.Write($"Сколько бутылок {water} (0,5)?: ");
             var quantityWater = Convert.ToInt32(Console.ReadLine());
 
             var price = (priceFanta * quantityFanta) + (priceCola * quantityCocaCola) + (priceWater * quantityWater);

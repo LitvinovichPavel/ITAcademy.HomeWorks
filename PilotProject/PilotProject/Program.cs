@@ -8,8 +8,6 @@ namespace PilotProject
     {
         static void Main(string[] args)
         {
-            InfoMessage infoMessage = new InfoMessage();
-            infoMessage.Message();
         }
     }
 }

@@ -25,13 +25,13 @@ namespace PilotProject
         public double Maki()
         {
             Console.WriteLine("Какие маки будете?");
-            Console.Write($"Сколько хотите: {MakiType.AvokadoMaki} (100гр)?: ");
+            Console.Write($"Сколько хотите: {avokadoMaki}?: ");
             var quantityAvokadoMaki = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Сколько хотите: {MakiType.ArizonaMaki} (100гр)?: ");
+            Console.Write($"Сколько хотите: {arizonaMaki}?: ");
             var quantityArizonaMaki = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Сколько хотите: {MakiType.KaradaMaki} (100гр)?: ");
+            Console.Write($"Сколько хотите: {karadaMaki}?: ");
             var quantityKaradaMaki = Convert.ToInt32(Console.ReadLine());
-            Console.Write($"Сколько хотите: {MakiType.NaraMaki} (100гр)?: ");
+            Console.Write($"Сколько хотите: {naraMaki}?: ");
             var quantityNaraMaki = Convert.ToInt32(Console.ReadLine());
 
             var price = (priceArizonaMaki * quantityArizonaMaki) + (priceAvokadoMaki * quantityAvokadoMaki) +
