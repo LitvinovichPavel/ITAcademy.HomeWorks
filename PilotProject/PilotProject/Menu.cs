@@ -7,8 +7,8 @@ namespace PilotProject
     class Menu
     {
         public double PriceBeverages { get; set; }
-        public string NameSets { get; set; }
-        public string NameMaki { get; set; }
+        public double PriceSets { get; set; }
+        public double PriceMaki { get; set; }
         public string NameBeverages { get; set; }
     }
 }

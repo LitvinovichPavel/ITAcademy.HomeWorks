@@ -6,9 +6,9 @@ namespace PilotProject
 {
     class BeveragesAll : Menu, IPrice
     {
-        public const string fanta = "Fanta";
-        public const string cola = "Coca-Cala";
-        public const string water = "Water";
+        public const string fanta = "Fanta (0,5л)";
+        public const string cola = "Coca-Cala (0,5л)";
+        public const string water = "Water (0.5л)";
 
         public const double priceFanta = 2.0;
         public const double priceCola = 2.0;
@@ -23,7 +23,7 @@ namespace PilotProject
             choiseCola = priceCola;
             choiseWater = priceWater;
         }
-        enum BeveragesType
+        public enum BeveragesType
         {
             Fanta = 1,
             CocaCola = 2,
@@ -33,13 +33,13 @@ namespace PilotProject
         {
             Console.WriteLine("Что будете пить?");
             Console.Write($"Сколько бутылок {BeveragesType.Fanta}?: ");
-            int quantityFanta = int.Parse(Console.ReadLine());
+            var quantityFanta = Convert.ToInt32(Console.ReadLine());
             Console.Write($"Сколько бутылок {BeveragesType.CocaCola}?: ");
-            int quantityCocaCola = int.Parse(Console.ReadLine());
+            var quantityCocaCola = Convert.ToInt32(Console.ReadLine());
             Console.Write($"Сколько бутылок {BeveragesType.Water}?: ");
-            int quantityWater = int.Parse(Console.ReadLine());
+            var quantityWater = Convert.ToInt32(Console.ReadLine());
 
-            double price = (priceFanta * quantityFanta) + (priceCola * quantityCocaCola) + (priceWater * quantityWater);
+            var price = (priceFanta * quantityFanta) + (priceCola * quantityCocaCola) + (priceWater * quantityWater);
             PriceBeverages = price;
             return PriceBeverages;
         }

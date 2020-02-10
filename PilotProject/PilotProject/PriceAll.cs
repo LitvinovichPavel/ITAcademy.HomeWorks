@@ -14,6 +14,8 @@ namespace PilotProject
         {
             BeveragesAll beveragesAll = new BeveragesAll();
             PriceBeverages = beveragesAll.Beverages();
+            MakiAll makiAll = new MakiAll();
+            PriceMaki = makiAll.Maki();
 
             Price = PriceBeverages + PriceMaki + PriceSets;
             Console.WriteLine($"Общий счет: {Price} рублей.");
