@@ -24,14 +24,14 @@ namespace PilotProject
         }
         public double Maki()
         {
-            Console.Write("Какие маки будете?");
-            Console.WriteLine($"Сколько хотите: {MakiType.AvokadoMaki}?: ");
+            Console.WriteLine("Какие маки будете?");
+            Console.Write($"Сколько хотите: {MakiType.AvokadoMaki} (100гр)?: ");
             var quantityAvokadoMaki = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"Сколько хотите: {MakiType.ArizonaMaki}?: ");
+            Console.Write($"Сколько хотите: {MakiType.ArizonaMaki} (100гр)?: ");
             var quantityArizonaMaki = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"Сколько хотите: {MakiType.KaradaMaki}?: ");
+            Console.Write($"Сколько хотите: {MakiType.KaradaMaki} (100гр)?: ");
             var quantityKaradaMaki = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine($"Сколько хотите: {MakiType.NaraMaki}?: ");
+            Console.Write($"Сколько хотите: {MakiType.NaraMaki} (100гр)?: ");
             var quantityNaraMaki = Convert.ToInt32(Console.ReadLine());
 
             var price = (priceArizonaMaki * quantityArizonaMaki) + (priceAvokadoMaki * quantityAvokadoMaki) +

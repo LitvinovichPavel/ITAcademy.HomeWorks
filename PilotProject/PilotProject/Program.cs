@@ -8,8 +8,8 @@ namespace PilotProject
     {
         static void Main(string[] args)
         {
-            PriceAll priceAll = new PriceAll();
-            priceAll.PriceFoodAndDrink();
+            InfoMessage infoMessage = new InfoMessage();
+            infoMessage.Message();
         }
     }
 }
