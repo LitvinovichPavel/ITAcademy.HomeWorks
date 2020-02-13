@@ -6,6 +6,8 @@ namespace PilotProject
 {
     class BeveragesAll : Menu, IPrice
     {
+        public double PriceBeverages { get; set; }
+
         public const string fanta = "Fanta (0,5л)";
         public const string cola = "Coca-Cala (0,5л)";
         public const string water = "Water (0.5л)";
@@ -13,48 +15,59 @@ namespace PilotProject
         public const double priceFanta = 2.0;
         public const double priceCola = 2.0;
         public const double priceWater = 0.5;
-        public void Beverages()
+        public void BeveragesQuestion()
         {
             Console.WriteLine("***********************************************************");
             Console.WriteLine("Что будете пить?");
-
-            try
-            {
-                Console.Write($"Сколько бутылок {fanta}?: ");
-                ushort quantityFanta = Convert.ToUInt16(Console.ReadLine());
-                Console.Write($"Сколько бутылок {cola}?: ");
-                ushort quantityCocaCola = Convert.ToUInt16(Console.ReadLine());
-                Console.Write($"Сколько бутылок {water}?: ");
-                ushort quantityWater = Convert.ToUInt16(Console.ReadLine());
-
-                PriceBeverages = (priceFanta * quantityFanta) + (priceCola * quantityCocaCola) +
-                                 (priceWater * quantityWater);
-            }
-
-            catch(FormatException)                  //в случае некорректного ввода срабатывает исключение
-            {
-                Console.WriteLine("\a\n***!!!Введите число!!!***\n");
-                var beveragesAll = new BeveragesAll();
-                beveragesAll.Beverages();
-            }
-
-            catch(OverflowException)                //срабатывает если введено слишком большое число
-            {
-                Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
-                var beveragesAll = new BeveragesAll();
-                beveragesAll.Beverages();
-            }
+        }
+        public double BeverationFanta()
+        {
+            Console.Write("Сколько Fanta?: ");
+            ushort quantityFanta = Convert.ToUInt16(Console.ReadLine());
+            double allPriceFanta = priceFanta * quantityFanta;
+            return allPriceFanta;
+        }
+        public double BeverationCola()
+        {
+            Console.Write("Сколько Cola?: ");
+            ushort quantityCola = Convert.ToUInt16(Console.ReadLine());
+            double allPriceCola = priceCola * quantityCola;
+            return allPriceCola;
+        }
+        public double BeverationWater()
+        {
+            Console.Write($"Сколько воды?: ");
+            ushort quantityWater = Convert.ToUInt16(Console.ReadLine());
+            double allPriceWater = priceWater * quantityWater;
+            return allPriceWater;
         }
         public void PriceProduct()
         {
-            var beveragesAll = new BeveragesAll();
-            beveragesAll.Beverages();
-            object obj;
-            obj = beveragesAll.PriceBeverages;
-            double num = (double)obj;
+            BeveragesAll beveragesAll = new BeveragesAll();
 
+            double allBeverations;
+            double allFanta;
+            double allCola;
+            double allWater;
 
-            Console.WriteLine($"PRICE {num}");
+            try
+            {
+                beveragesAll.BeveragesQuestion();
+                allFanta = beveragesAll.BeverationFanta();
+                allCola = beveragesAll.BeverationCola();
+                allWater = beveragesAll.BeverationWater();
+
+                allBeverations = allFanta + allCola + allWater;
+                PriceBeverages = allBeverations;
+                Console.WriteLine($"PRICE ALL ALL ALL {PriceBeverages}");
+            }
+
+            catch(FormatException)
+            {
+                Console.WriteLine($"Введено не верное значение!!!");
+                beveragesAll.PriceProduct();
+            }
+
         }
     }
 }

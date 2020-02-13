@@ -8,8 +8,8 @@ namespace PilotProject
     {
         static void Main(string[] args)
         {
-            BeveragesAll beveragesAll = new BeveragesAll();
-            beveragesAll.PriceProduct();
+            PriceAll priceAll = new PriceAll();
+            priceAll.PriceFoodAndDrink();
         }
     }
 }
