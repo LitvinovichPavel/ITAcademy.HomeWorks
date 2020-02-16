@@ -11,8 +11,9 @@ namespace PilotProject
             var priceAll = new PriceAll();
             priceAll.PriceAllBeverages();
             priceAll.PriceAllMaki();
-
-            Console.WriteLine(priceAll.Total());
+            priceAll.PriceAllSets();
+            
+            Console.WriteLine($"TOTAL: {priceAll.Total()}");
         }
     }
 }

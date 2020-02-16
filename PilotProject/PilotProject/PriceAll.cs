@@ -56,9 +56,32 @@ namespace PilotProject
 
             return PriceMaki;
         }
+        public double PriceAllSets()
+        {
+            var setsAll = new SetsAll();
+
+            try
+            {
+                setsAll.PriceProduct();
+                PriceSets = setsAll.PriceSets;
+                Console.WriteLine($"PRICE SETS:------> {PriceSets:#.##}");
+            }
+            catch (FormatException)                  //в случае некорректного ввода срабатывает исключение
+            {
+                Console.WriteLine("\a\n***!!!Введите число!!!***\n");
+                PriceAllSets();
+            }
+            catch (OverflowException)                //срабатывает если введено слишком большое число
+            {
+                Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
+                PriceAllSets();
+            }
+
+            return PriceSets;
+        }
         public double Total()
         {
-            return PriceBeverages + PriceMaki;
+            return PriceBeverages + PriceMaki + PriceSets;
         }
     }
 }
