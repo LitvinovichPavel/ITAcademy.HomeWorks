@@ -49,8 +49,9 @@ namespace PilotProject
                 makiAll.Maki();
             }
         }
-        public void PriceProduct()
+        public double PriceProduct()
         {
+            return 0;
         }
     }
 }

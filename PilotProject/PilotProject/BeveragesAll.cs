@@ -41,33 +41,19 @@ namespace PilotProject
             double allPriceWater = priceWater * quantityWater;
             return allPriceWater;
         }
-        public void PriceProduct()
+        public double PriceProduct()
         {
             BeveragesAll beveragesAll = new BeveragesAll();
-
-            double allBeverations;
             double allFanta;
             double allCola;
             double allWater;
 
-            try
-            {
-                beveragesAll.BeveragesQuestion();
-                allFanta = beveragesAll.BeverationFanta();
-                allCola = beveragesAll.BeverationCola();
-                allWater = beveragesAll.BeverationWater();
+            beveragesAll.BeveragesQuestion();
+            allFanta = beveragesAll.BeverationFanta();
+            allCola = beveragesAll.BeverationCola();
+            allWater = beveragesAll.BeverationWater();
 
-                allBeverations = allFanta + allCola + allWater;
-                PriceBeverages = allBeverations;
-                Console.WriteLine($"PRICE ALL ALL ALL {PriceBeverages}");
-            }
-
-            catch(FormatException)
-            {
-                Console.WriteLine($"Введено не верное значение!!!");
-                beveragesAll.PriceProduct();
-            }
-
+            return PriceBeverages = allFanta + allCola + allWater;
         }
     }
 }

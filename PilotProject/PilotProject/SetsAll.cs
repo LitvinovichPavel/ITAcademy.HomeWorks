@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PilotProject
 {
-    class SetsAll : Menu, IPrice
+    class SetsAll : Menu//, IPrice
     {
         public const string num1Set = "Сет №1 (410гр)";
         public const string num2Set = "Сет №2 (430гр)";
@@ -49,8 +49,9 @@ namespace PilotProject
                 setsAll.Sets();
             }
         }
-        public void PriceProduct()
+        public double PriceProduct()
         {
+            return 0;
         }
     }
 }
