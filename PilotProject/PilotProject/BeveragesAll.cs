@@ -15,7 +15,7 @@ namespace PilotProject
         public const double priceWater = 0.5;
         public void BeveragesQuestion()
         {
-            Console.WriteLine("***********************************************************");
+            Console.WriteLine("\n***********************************************************");
             Console.WriteLine("Что будете пить?");
         }
         public double BeverationFanta()

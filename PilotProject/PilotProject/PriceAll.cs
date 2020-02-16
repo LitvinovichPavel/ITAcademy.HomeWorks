@@ -7,14 +7,13 @@ namespace PilotProject
     class PriceAll
     {
         public static double Price { get; set; }            //общая цена
-        public double PriceBeverages { get; set; }   //цена за напитки
+        public double PriceBeverages { get; set; }          //цена за напитки
         public static double PriceMaki { get; set; }        //цена за маки
         public static double PriceSets { get; set; }        //цена за сет
-        public void PriceFoodAndDrink()
+        public double PriceAllBeverages()
         {
             var beveragesAll = new BeveragesAll();
-            var makiAll = new MakiAll();
-
+            
             try
             {
                 beveragesAll.PriceProduct();
@@ -24,13 +23,19 @@ namespace PilotProject
             catch (FormatException)                  //в случае некорректного ввода срабатывает исключение
             {
                 Console.WriteLine("\a\n***!!!Введите число!!!***\n");
-                PriceFoodAndDrink();
+                PriceAllBeverages();
             }
             catch (OverflowException)                //срабатывает если введено слишком большое число
             {
                 Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
-                PriceFoodAndDrink();
+                PriceAllBeverages();
             }
+
+            return PriceBeverages;
+        }
+        public double PriceAllMaki()
+        {
+            var makiAll = new MakiAll();
 
             try
             {
@@ -41,15 +46,19 @@ namespace PilotProject
             catch (FormatException)                  //в случае некорректного ввода срабатывает исключение
             {
                 Console.WriteLine("\a\n***!!!Введите число!!!***\n");
-                PriceFoodAndDrink();
+                PriceAllMaki();
             }
             catch (OverflowException)                //срабатывает если введено слишком большое число
             {
                 Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
-                PriceFoodAndDrink();
+                PriceAllMaki();
             }
 
-            Console.WriteLine($"ОБСТСЩИЙ PRICE:->->->->-> {(PriceBeverages + PriceMaki):#.##}");
+            return PriceMaki;
+        }
+        public double Total()
+        {
+            return PriceBeverages + PriceMaki;
         }
     }
 }

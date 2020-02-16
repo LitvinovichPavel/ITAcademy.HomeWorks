@@ -17,7 +17,7 @@ namespace PilotProject
         public const double priceNaraMaki = 8.7;
         public void MakiQuestion()
         {
-            Console.WriteLine("***********************************************************");
+            Console.WriteLine("\n***********************************************************");
             Console.WriteLine("Какие маки будете?");
         }
         public double MakiAvokado()
