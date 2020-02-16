@@ -13,12 +13,13 @@ namespace PilotProject
         public void PriceFoodAndDrink()
         {
             var beveragesAll = new BeveragesAll();
+            var makiAll = new MakiAll();
 
             try
             {
                 beveragesAll.PriceProduct();
                 PriceBeverages = beveragesAll.PriceBeverages;
-                Console.WriteLine("PRICE:------> " + PriceBeverages);
+                Console.WriteLine($"PRICE DRINK:------> {PriceBeverages:#.##}");
             }
             catch (FormatException)                  //в случае некорректного ввода срабатывает исключение
             {
@@ -30,6 +31,25 @@ namespace PilotProject
                 Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
                 PriceFoodAndDrink();
             }
+
+            try
+            {
+                makiAll.PriceProduct();
+                PriceMaki = makiAll.PriceMaki;
+                Console.WriteLine($"PRICE MAKI:------> {PriceMaki:#.##}");
+            }
+            catch (FormatException)                  //в случае некорректного ввода срабатывает исключение
+            {
+                Console.WriteLine("\a\n***!!!Введите число!!!***\n");
+                PriceFoodAndDrink();
+            }
+            catch (OverflowException)                //срабатывает если введено слишком большое число
+            {
+                Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
+                PriceFoodAndDrink();
+            }
+
+            Console.WriteLine($"ОБСТСЩИЙ PRICE:->->->->-> {(PriceBeverages + PriceMaki):#.##}");
         }
     }
 }

@@ -6,8 +6,6 @@ namespace PilotProject
 {
     class BeveragesAll : Menu, IPrice
     {
-        public double PriceBeverages { get; set; }
-
         public const string fanta = "Fanta (0,5л)";
         public const string cola = "Coca-Cala (0,5л)";
         public const string water = "Water (0.5л)";
@@ -22,38 +20,30 @@ namespace PilotProject
         }
         public double BeverationFanta()
         {
-            Console.Write("Сколько Fanta?: ");
+            Console.Write($"Сколько {fanta}?: ");
             ushort quantityFanta = Convert.ToUInt16(Console.ReadLine());
             double allPriceFanta = priceFanta * quantityFanta;
             return allPriceFanta;
         }
         public double BeverationCola()
         {
-            Console.Write("Сколько Cola?: ");
+            Console.Write($"Сколько {cola}?: ");
             ushort quantityCola = Convert.ToUInt16(Console.ReadLine());
             double allPriceCola = priceCola * quantityCola;
             return allPriceCola;
         }
         public double BeverationWater()
         {
-            Console.Write($"Сколько воды?: ");
+            Console.Write($"Сколько {water}?: ");
             ushort quantityWater = Convert.ToUInt16(Console.ReadLine());
             double allPriceWater = priceWater * quantityWater;
             return allPriceWater;
         }
         public double PriceProduct()
         {
-            BeveragesAll beveragesAll = new BeveragesAll();
-            double allFanta;
-            double allCola;
-            double allWater;
-
-            beveragesAll.BeveragesQuestion();
-            allFanta = beveragesAll.BeverationFanta();
-            allCola = beveragesAll.BeverationCola();
-            allWater = beveragesAll.BeverationWater();
-
-            return PriceBeverages = allFanta + allCola + allWater;
+            BeveragesQuestion();
+            PriceBeverages = BeverationFanta() + BeverationCola() + BeverationWater();
+            return PriceBeverages;
         }
     }
 }

@@ -15,43 +15,44 @@ namespace PilotProject
         public const double priceArizonaMaki = 6.2;
         public const double priceKaradaMaki = 5.1;
         public const double priceNaraMaki = 8.7;
-        public void Maki()
+        public void MakiQuestion()
         {
             Console.WriteLine("***********************************************************");
             Console.WriteLine("Какие маки будете?");
-
-            try
-            {
-                Console.Write($"Сколько хотите: {avokadoMaki}?: ");
-                ushort quantityAvokadoMaki = Convert.ToUInt16(Console.ReadLine());
-                Console.Write($"Сколько хотите: {arizonaMaki}?: ");
-                ushort quantityArizonaMaki = Convert.ToUInt16(Console.ReadLine());
-                Console.Write($"Сколько хотите: {karadaMaki}?: ");
-                ushort quantityKaradaMaki = Convert.ToUInt16(Console.ReadLine());
-                Console.Write($"Сколько хотите: {naraMaki}?: ");
-                ushort quantityNaraMaki = Convert.ToUInt16(Console.ReadLine());
-
-                PriceMaki = (priceArizonaMaki * quantityArizonaMaki) + (priceAvokadoMaki * quantityAvokadoMaki) +
-                            (priceKaradaMaki * quantityKaradaMaki) + (priceNaraMaki * quantityNaraMaki);
-            }
-
-            catch (FormatException)                  //в случае некорректного ввода срабатывает исключение
-            {
-                Console.WriteLine("\a\n***!!!Введите число!!!***\n");
-                var makiAll = new MakiAll();
-                makiAll.Maki();
-            }
-
-            catch (OverflowException)                //срабатывает если введено слишком большое число
-            {
-                Console.WriteLine("\a\n***Ого! У нас так много нет!***\n");
-                var makiAll = new MakiAll();
-                makiAll.Maki();
-            }
+        }
+        public double MakiAvokado()
+        {
+            Console.Write($"Сколько {avokadoMaki}?: ");
+            ushort quantityAvokado = Convert.ToUInt16(Console.ReadLine());
+            double allPriceAvokado = priceAvokadoMaki * quantityAvokado;
+            return allPriceAvokado;
+        }
+        public double MakiArizona()
+        {
+            Console.Write($"Сколько {arizonaMaki}: ");
+            ushort quantityArizona = Convert.ToUInt16(Console.ReadLine());
+            double allPriceArizona = priceArizonaMaki * quantityArizona;
+            return allPriceArizona;
+        }
+        public double MakiKarada()
+        {
+            Console.Write($"Сколько {karadaMaki}?: ");
+            ushort quantityKarada = Convert.ToUInt16(Console.ReadLine());
+            double allPriceKarada = priceKaradaMaki * quantityKarada;
+            return allPriceKarada;
+        }
+        public double MakiNara()
+        {
+            Console.Write($"Сколько {naraMaki}?: ");
+            ushort quantityNara = Convert.ToUInt16(Console.ReadLine());
+            double allPriceNara = priceNaraMaki * quantityNara;
+            return allPriceNara;
         }
         public double PriceProduct()
         {
-            return 0;
+            MakiQuestion();
+            PriceMaki = MakiAvokado() + MakiArizona() + MakiKarada() + MakiNara();
+            return PriceMaki;
         }
     }
 }
