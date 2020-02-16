@@ -4,67 +4,72 @@ using System.Text;
 
 namespace PilotProject
 {
-    class User : Menu, IUser
+    class NewUser : Menu//, IUser
     {
         public const string greeting = "Здравствуйте!";
-        public void Hello()
+        public void Hello()                            //приветствие
         {
             Console.WriteLine(greeting);
         }
         public int OrderNumber()                       //присваиваем заказу номер
         {
             Random randomOrderNumber = new Random();
-            return randomOrderNumber.Next(111, 555);
+            return randomOrderNumber.Next(111111, 555555);
         }
-        public void UserName()                       //пользователь сообщает свое имя
+        public string EnterUserName()                       //пользователь сообщает свое имя
         {
             Console.Write("Введите Ваше имя: ");
-            string enterUserName;
-            enterUserName = Console.ReadLine();
-            Console.WriteLine($"Покупатель: {enterUserName}");
+            string userName = Console.ReadLine();
+            return $"Покупатель: {userName}";
         }
-        public void PhoneNumber()                    //ввод номера телефона
+        public void OutputName()
         {
-            Console.Write("Введите номер Вашего телефона: +375");
+            EnterUserName();//?????????????????????????????
+        }
+        public string PhoneNumber()                    //ввод номера телефона и проверка правильности ввода номера
+        {
+            Console.Write("\nВведите номер Вашего телефона: +375");
             string userPhoneNumberStr;
             int userPhoneNumberInt;
             userPhoneNumberStr = Console.ReadLine();
 
             if (userPhoneNumberStr.Length > 9)
             {
-                Console.WriteLine("Введен слишком длинный номер!");
+                Console.WriteLine("\a!!! Введен слишком длинный номер !!!");
+                PhoneNumber();
             }
             else if (userPhoneNumberStr.Length < 9)
             {
-                Console.WriteLine("Введен слишком короткий номер!");
+                Console.WriteLine("\a!!! Введен слишком короткий номер !!!");
+                PhoneNumber();
             }
             else
             {
                 userPhoneNumberInt = Convert.ToInt32(userPhoneNumberStr);
                 int checkNumber;
                 checkNumber = userPhoneNumberInt / 10_000_000;
+                
                 if (checkNumber.Equals(29) || checkNumber.Equals(33) || checkNumber.Equals(44) || 
                     checkNumber.Equals(25) || checkNumber.Equals(17))
                 {
-                    Console.WriteLine($"Телефон №: +375{userPhoneNumberInt}");
+                    //Console.WriteLine($"Телефон №: +375{userPhoneNumberInt}");
                 }
                 else
                 {
-                    Console.WriteLine("В нашей стране мобильного оператора с данным кодом нет!");
+                    Console.WriteLine("\a!!! В нашей стране мобильного оператора с данным кодом нет !!!");
+                    PhoneNumber();
                 }
             }
+            return userPhoneNumberStr;                 //возвращаем номер телефона
         }
-        public void Location()                         //адрес доставки
+        public void Location(out string userCity, out string userStreet, out ushort userHouseNumber)                         //адрес доставки
         {
             Console.Write("Введите город: ");
-            string userCity;
             userCity = Console.ReadLine();
             Console.Write("Введите улицу: ");
-            string userStreet;
             userStreet = Console.ReadLine();
             Console.Write("Введите номер дома: ");
-            int userHouseNumber;
-            userHouseNumber = Convert.ToInt32(Console.ReadLine());
+            userHouseNumber = Convert.ToUInt16(Console.ReadLine());
         }
     }
 }

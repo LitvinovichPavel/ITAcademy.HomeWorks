@@ -18,7 +18,6 @@ namespace PilotProject
             {
                 beveragesAll.PriceProduct();
                 PriceBeverages = beveragesAll.PriceBeverages;
-                Console.WriteLine($"PRICE DRINK:------> {PriceBeverages:#.##}");
             }
             catch (FormatException)                  //в случае некорректного ввода срабатывает исключение
             {
@@ -41,7 +40,6 @@ namespace PilotProject
             {
                 makiAll.PriceProduct();
                 PriceMaki = makiAll.PriceMaki;
-                Console.WriteLine($"PRICE MAKI:------> {PriceMaki:#.##}");
             }
             catch (FormatException)                  //в случае некорректного ввода срабатывает исключение
             {
@@ -64,7 +62,6 @@ namespace PilotProject
             {
                 setsAll.PriceProduct();
                 PriceSets = setsAll.PriceSets;
-                Console.WriteLine($"PRICE SETS:------> {PriceSets:#.##}");
             }
             catch (FormatException)                  //в случае некорректного ввода срабатывает исключение
             {
