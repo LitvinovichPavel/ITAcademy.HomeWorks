@@ -10,6 +10,12 @@ namespace PilotProject
 {
     public static class Logger
     {
+        public static ILog Log = LogManager.GetLogger(typeof(Logger));
 
+        public static void InitLogger()
+        {
+            var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
+            XmlConfigurator.Configure(logRepository, new FileInfo("Log.config"));
+        }
     }
 }

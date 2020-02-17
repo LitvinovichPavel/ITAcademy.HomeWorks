@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.Json;
 using Newtonsoft.Json;
+using System.Reflection;
 
 namespace PilotProject
 {
@@ -8,6 +9,7 @@ namespace PilotProject
     {
         static void Main(string[] args)
         {
+
             var newUser = new NewUser();
             newUser.Hello();                                                               //приветствие
             newUser.EnterUserName(out string userName);                                    //ввод имени
