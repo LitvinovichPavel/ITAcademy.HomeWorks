@@ -28,7 +28,7 @@ namespace PilotProject
                 Console.WriteLine("Доброй ночи!");
             }
         }
-        public int OrderNumber()                              //присваиваем заказу номер
+        public static int OrderNumber()                              //присваиваем заказу номер
         {
             Random randomOrderNumber = new Random();
             return randomOrderNumber.Next(100000, 555555);
@@ -83,16 +83,18 @@ namespace PilotProject
             return UserPhoneNumber;
         }                                                                             
         public void Location(out string userCity, out string userStreet,                    //адрес доставки
-                             out string userHouseNumber, out string userNumberApartament)
+                             out string userHouseNumber, out string userNumberApartment)
         {
-            Console.Write("Введите город: ");
+            Console.WriteLine("\n***********************************************************");
+            Console.Write("Введите адрес доставки - ");
+            Console.Write("город: ");
             userCity = Console.ReadLine();
-            Console.Write("Введите улицу: ");
+            Console.Write("                         улица: ");
             userStreet = Console.ReadLine();
-            Console.Write("Введите номер дома: ");
+            Console.Write("                         номер дома: ");
             userHouseNumber = Console.ReadLine();
-            Console.Write("Введите номер квартиры: ");
-            userNumberApartament = Console.ReadLine();
+            Console.Write("                         номер квартиры: ");
+            userNumberApartment = Console.ReadLine();
         }
     }
 }

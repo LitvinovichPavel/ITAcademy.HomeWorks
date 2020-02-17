@@ -11,7 +11,6 @@ namespace PilotProject
             var newUser = new NewUser();
             newUser.Hello();                                                               //приветствие
             newUser.EnterUserName(out string userName);                                    //ввод имени
-            newUser.PhoneNumber();                                                         //ввод номера телефона
 
             var priceAll = new PriceAll();
             priceAll.PriceAllBeverages();
@@ -19,15 +18,14 @@ namespace PilotProject
             priceAll.PriceAllSets();
 
             newUser.Location(out string userCity, out string userStreet,                   //ввод адреса доставки
-                             out string userHouseNumber, out string userNumberApartament);
+                             out string userHouseNumber, out string userNumberApartment);
 
-            
-
-
-
-            Console.WriteLine($"TOTAL: {priceAll.Total():#.##}");
-            
-
+            Console.WriteLine("\n***********************************************************");
+            Console.WriteLine($"\nЗака №: {NewUser.OrderNumber()}\n" +
+                $"Сумма заказа: {priceAll.Total():#.##}\n" +
+                $"Покупатель: {userName}\n" +
+                $"Телефон: +375{newUser.PhoneNumber()}\n" +
+                $"Адрес доставки: {userCity}, {userStreet}, {userHouseNumber}, {userNumberApartment}");
         }
     }
 }
