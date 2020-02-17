@@ -6,8 +6,8 @@ namespace PilotProject
 {
     class Menu
     {
-        public double PriceBeverages { get; set; }
-        public double PriceSets { get; set; }
-        public double PriceMaki { get; set; }
+        public double PriceBeverages { get; set; } //цена за напитки
+        public double PriceSets { get; set; }      //цена за сеты
+        public double PriceMaki { get; set; }      //цена за маки
     }
 }
