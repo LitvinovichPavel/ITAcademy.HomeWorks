@@ -81,7 +81,11 @@ namespace PilotProject
             }
 
             return UserPhoneNumber;
-        }                                                                             
+        }                              
+        public int DisplayNamber()
+        {
+            return UserPhoneNumber;
+        }
         public void Location(out string userCity, out string userStreet,                    //адрес доставки
                              out string userHouseNumber, out string userNumberApartment)
         {

@@ -16,6 +16,7 @@ namespace PilotProject
             priceAll.PriceAllBeverages();
             priceAll.PriceAllMaki();
             priceAll.PriceAllSets();
+            newUser.PhoneNumber();
 
             newUser.Location(out string userCity, out string userStreet,                   //ввод адреса доставки
                              out string userHouseNumber, out string userNumberApartment);
@@ -24,7 +25,7 @@ namespace PilotProject
             Console.WriteLine($"\nЗака №: {NewUser.OrderNumber()}\n" +
                 $"Сумма заказа: {priceAll.Total():#.##}\n" +
                 $"Покупатель: {userName}\n" +
-                $"Телефон: +375{newUser.PhoneNumber()}\n" +
+                $"Телефон: +375{newUser.DisplayNamber()}\n" +
                 $"Адрес доставки: {userCity}, {userStreet}, {userHouseNumber}, {userNumberApartment}");
         }
     }
