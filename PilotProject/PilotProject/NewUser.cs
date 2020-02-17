@@ -90,14 +90,14 @@ namespace PilotProject
                              out string userHouseNumber, out string userNumberApartment)
         {
             Console.WriteLine("\n***********************************************************");
-            Console.Write("Введите адрес доставки - ");
-            Console.Write("город: ");
+            Console.Write("Введите адрес доставки : ");
+            Console.Write("город - ");
             userCity = Console.ReadLine();
-            Console.Write("                         улица: ");
+            Console.Write("                         улица - ");
             userStreet = Console.ReadLine();
-            Console.Write("                         номер дома: ");
+            Console.Write("                         номер дома - ");
             userHouseNumber = Console.ReadLine();
-            Console.Write("                         номер квартиры: ");
+            Console.Write("                         номер квартиры - ");
             userNumberApartment = Console.ReadLine();
         }
     }
