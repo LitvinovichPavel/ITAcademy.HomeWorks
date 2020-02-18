@@ -28,7 +28,7 @@ namespace PilotProject
                 $"Покупатель: {userName}\n" +
                 $"Телефон: +375{newUser.DisplayNamber()}\n" +
                 $"Адрес доставки: {userCity}, {userStreet}, {userHouseNumber}, {userNumberApartment}");
-                
+            Console.ReadLine();                
         }
     }
 }
