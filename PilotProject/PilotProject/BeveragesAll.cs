@@ -9,40 +9,45 @@ namespace PilotProject
         public const string fanta = "Fanta (0,5л)";
         public const string cola = "Coca-Cala (0,5л)";
         public const string water = "Water (0.5л)";
-
-        public const double priceFanta = 2.0;
-        public const double priceCola = 2.0;
-        public const double priceWater = 0.5;
+        public string Title { get; set; }
+        public double Price { get; set; }
+        public BeveragesAll()
+        {
+        }
+        public BeveragesAll(string title, double price)
+        {
+            Title = title;
+            Price = price;
+        }
         public void BeveragesQuestion()
         {
             Console.WriteLine("\n***********************************************************");
             Console.WriteLine("Что будете пить?");
         }
-        public double BeverationFanta()
+        public void ListBeverages(out double totalPriceFanta, out double totalPriceCola, out double totalPriceWater)
         {
+            List<BeveragesAll> scroll = new List<BeveragesAll>() { };
+            scroll.Add(new BeveragesAll(Title = "Fanta", Price = 2.0));
+            scroll.Add(new BeveragesAll(Title = "Coca-Cola", Price = 2.0));
+            scroll.Add(new BeveragesAll(Title = "Water", Price = 0.5));
+
             Console.Write($"Сколько {fanta}?: ");
             ushort quantityFanta = Convert.ToUInt16(Console.ReadLine());
-            double allPriceFanta = priceFanta * quantityFanta;
-            return allPriceFanta;
-        }
-        public double BeverationCola()
-        {
+            totalPriceFanta = quantityFanta * scroll[0].Price;
+
             Console.Write($"Сколько {cola}?: ");
             ushort quantityCola = Convert.ToUInt16(Console.ReadLine());
-            double allPriceCola = priceCola * quantityCola;
-            return allPriceCola;
-        }
-        public double BeverationWater()
-        {
+            totalPriceCola = quantityCola * scroll[1].Price;
+
             Console.Write($"Сколько {water}?: ");
             ushort quantityWater = Convert.ToUInt16(Console.ReadLine());
-            double allPriceWater = priceWater * quantityWater;
-            return allPriceWater;
+            totalPriceWater = quantityWater * scroll[2].Price;
         }
         public double PriceProduct()
         {
             BeveragesQuestion();
-            PriceBeverages = BeverationFanta() + BeverationCola() + BeverationWater();
+            ListBeverages(out double totalPriceFanta, out double totalPriceCola, out double totalPriceWater);
+            PriceBeverages = totalPriceFanta + totalPriceCola + totalPriceWater;
             return PriceBeverages;
         }
     }
