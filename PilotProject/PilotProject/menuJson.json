@@ -1,0 +1,64 @@
+{
+  "Beverages": [
+    {
+      "Price": 2,
+      "Title": "Fanta",
+      "Volume": 0.5
+    },
+    
+    {
+      "Price": 2,
+      "Title": "Coca-Cola",
+      "Volume": 0.5
+    },
+    {
+      "Price": 0.5,
+      "Title": "Water",
+      "Volume": 0.5
+    }
+  ],
+  "Makis": [
+    {
+      "Mass": 100,
+      "Price": 5.6,
+      "Title": "Avokado maki"
+    },
+    {
+      "Mass": 100,
+      "Price": 6.2,
+      "Title": "Arizona maki"
+    },
+    {
+      "Mass": 100,
+      "Price": 5.1,
+      "Title": "Karada maki"
+    },
+    {
+      "Mass": 100,
+      "Price": 8.7,
+      "Title": "Nara maki"
+    }
+  ],
+  "Sets": [
+    {
+      "Mass": 410,
+      "Price": 32,
+      "Title": "Set #1"
+    },
+    {
+      "Mass": 420,
+      "Price": 35.2,
+      "Title": "Set #2"
+    },
+    {
+      "Mass": 430,
+      "Price": 37.1,
+      "Title": "Set #3"
+    },
+    {
+      "Mass": 1000,
+      "Price": 55.7,
+      "Title": "Set Big"
+    }
+  ]
+}
